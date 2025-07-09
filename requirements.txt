@@ -1,0 +1,12 @@
+opencv-python
+numpy
+mediapipe
+pandas
+pyyaml
+sanic
+matplotlib
+pandas
+jupyter
+websockets==12.0
+git+https://gitlab2.informatik.uni-wuerzburg.de/hci/teaching/courses/machine-learning/student-submissions/ws24/Team-38/ml_framework.git
+seaborn
