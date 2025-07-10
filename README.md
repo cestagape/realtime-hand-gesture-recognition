@@ -15,7 +15,6 @@ The gesture detection model is served by a lightweight [Sanic](https://sanic.dev
 * [Install Requirements](#install-requirements)
 * [Performance & Metrics](#performance--metrics)
 * [Confusion Matrices](#confusion-matrices-1)
-* [Project Structure](#project-structure)
 * [Dataset Details](#dataset-details)
 * [License](#license)
 ---
@@ -153,22 +152,6 @@ The training loop tests these combinations:
 
 ![Confusion Matrix – Extended Model](con_matrices_optionals/itr%3D10000_lr%3D0.2_l2%3D0.0001_f1train%3D78.34%25_acctrain%3D92.50%25_batchsize%3D512_confusion_matrix.png)
 
----
-
-## Project Structure
-
-```text
-.
-├── slideshow/                   # Demo scripts & frontend integration
-├── performance_score/           # Evaluation tools and visualizations
-├── project/                     # Core model training code
-├── gesture_data/                # Raw training data
-├── optional_gesture_data/       # Additional gesture data
-├── validation_data/             # Hold-out validation data
-├── docs/images/                 # Confusion matrix figures
-├── requirements.txt             # Python dependencies
-└── README.md                    # Project overview
-```
 ---
 
 ## Dataset Details
