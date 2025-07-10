@@ -40,7 +40,7 @@ The system is composed of several components and technologies. It combines a San
 pip install -r requirements.txt
 ```
 
-### 1. **Basic Gesture Control**
+### 1. **Basic Gesture Control Usage**
 
 
 Launch the Sanic server, open the Reveal.js slideshow, and begin webcam input:
@@ -57,7 +57,7 @@ python slideshow/slideshow_demo.py
 | `rotate (clockwise)` | `Reveal.slide(0, 0)`<br>`rotateRotatables(currentSlide)` | Jump to the first slide and trigger custom rotation logic for elements |
 
 
-### 2. **Extended Gesture Control**
+### 2. **Extended Gesture Control Usage**
 
 
 Include additional gestures with:
@@ -88,10 +88,10 @@ python slideshow/slideshow_demo_optionals.py
 The model used to classify the basic gesture set consists of a fully connected neural network with the following structure:
 
 | Layer | Type  | Input Units | Output Units | Activation | Regularization |
-|-------|-------|-------------|--------------|------------|----------------|
-| 1     | Dense | 160         | 128          | Sigmoid    | L2 (`l2_lambda`) |
-| 2     | Dense | 128         | 128          | Sigmoid    | L2 (`l2_lambda`) |
-| 3     | Dense | 128         | 4            | None       | L2 (`l2_lambda`) |
+|-------|-------|-------------|--------------|------------|---------------|
+| 1     | Dense | 160         | 128          | Sigmoid    | L2            |
+| 2     | Dense | 128         | 128          | Sigmoid    | L2            |
+| 3     | Dense | 128         | 4            | None       | L2            |
 
 The model is trained and evaluated using a loop over different hyperparameter combinations:
 
@@ -120,13 +120,14 @@ The model is trained and evaluated using a loop over different hyperparameter co
 ### Extended Gesture Model
 
 *Classes: pinch, spread, swipe\_up, swipe\_down, flip\_table*
+
 For recognizing extended gestures, a similar model is used, but trained with different hyperparameters. The architecture remains the same:
 
-| Layer | Type  | Input Units | Output Units | Activation | Regularization |
-|-------|-------|-------------|--------------|------------|----------------|
-| 1     | Dense | 240         | 256          | Sigmoid    | L2 (`l2_lambda`) |
-| 2     | Dense | 256         | 128          | Sigmoid    | L2 (`l2_lambda`) |
-| 3     | Dense | 128         | 12           | None       | L2 (`l2_lambda`) |
+| Layer | Type  | Input Units | Output Units | Activation | Regularization  |
+|-------|-------|-------------|--------------|------------|-----------------|
+| 1     | Dense | 240         | 256          | Sigmoid    | L2              |
+| 2     | Dense | 256         | 128          | Sigmoid    | L2 |
+| 3     | Dense | 128         | 12           | None       | L2 |
 
 
 The training loop tests these combinations:
