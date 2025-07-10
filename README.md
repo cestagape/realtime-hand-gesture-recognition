@@ -10,17 +10,14 @@ The gesture detection model is served by a lightweight [Sanic](https://sanic.dev
 
 ## Table of Contents
 
-1. [Overview](#Project Overview)
-2. [Getting Started](#getting-started)
-3. [Usage](#usage)
-4. [Dataset](#dataset)
-5. [Model Training](#model-training)
-6. [Performance & Metrics](#performance--metrics)
-7. [Confusion Matrices](#confusion-matrices)
-8. [Project Structure](#project-structure)
-9. [Contributing](#contributing)
-10. [License](#license)
-
+* [Project Overview](#project-overview)
+* [Getting Started](#getting-started)
+* [Install Requirements](#install-requirements)
+* [Performance & Metrics](#performance--metrics)
+* [Confusion Matrices](#confusion-matrices-1)
+* [Project Structure](#project-structure)
+* [Dataset Details](#dataset-details)
+* [License](#license)
 ---
 
 ## Project Overview
@@ -82,23 +79,6 @@ python slideshow/slideshow_demo_optionals.py
 | `flip_table`         | `Reveal.slide(indexh, indexv)`                           | Jump to a random slide (indexh and indexv should be randomized)        |
 
 ---
-## Dataset
-
-Landmark sequences were extracted from custom-recorded videos and manually annotated with ELAN. Statistics:
-
-| Gesture           | # Train | # Val |
-| ----------------- | ------- | ----- |
-| swipe\_left       | 1200    | 300   |
-| swipe\_right      | 1200    | 300   |
-| rotate\_clockwise | 800     | 200   |
-| pinch             | 600     | 150   |
-| spread            | 600     | 150   |
-| swipe\_up         | 500     | 125   |
-| swipe\_down       | 500     | 125   |
-| flip\_table       | 400     | 100   |
-
----
-
 ## Performance & Metrics
 
 ### Basic Gesture Model
@@ -122,9 +102,6 @@ The model is trained and evaluated using a loop over different hyperparameter co
 | L2 Regularization Values  | 0.001, 0.0001      |
 | Batch Sizes               | 256, 512           |
 | Random Seed               | 60                 |
-
-
----
 
 | Metric   | Train  | Validation |
 | -------- | ------ | ---------- |
