@@ -12,37 +12,29 @@ socket.onmessage = function(event) {
       break;
     case "rotate":
       console.log("received 'rotate' event");
-      const currentSlide = Reveal.getCurrentSlide();
+      Reveal.slide(0, 0);
 
       rotateRotatables(currentSlide);  // defined in helper_methods.js
       break;
     case "pinch":
       console.log("received 'zoom_in' event");
-
-      // increases zoom by 10%
-      zoom(10); // `zoom()` is defined in helper_methods.js
+      Reveal.toggleOverview()
       break;
     case "spread":
       console.log("received 'zoom_out' event");
-
-      // decreases zoom by 10%
-      zoom(-10); // `zoom()` is defined in helper_methods.js
+      Reveal.toggleOverview()
       break;
     case "swipe_up":
       console.log("received 'swipe_up' event");
-
       Reveal.up();
       break;
     case "swipe_down":
       console.log("received 'swipe_down' event");
-
       Reveal.down();
       break;
     case "flip_table":
         console.log("received 'flip_table' event");
-        const curSlide = Reveal.getCurrentSlide();
-  
-        Reveal.shuffle();
+        Reveal.slide(indexh, indexv)
         break;
     default:
       console.debug(`unknown message received from server: ${event.data}`);

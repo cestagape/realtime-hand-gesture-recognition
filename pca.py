@@ -48,12 +48,12 @@ if __name__ == "__main__":
     df = df.drop(columns=['ground_truth'], errors='ignore')
     
     scaler = StandardScaler()
-    scaler.load("project/scaler.npz")
+    scaler.load("scaler.npz")
     X_scaled = scaler.transform(df.values)
     
     pca = PCA(n_components=10)
     pca.fit(X_scaled)
     transformed_data = pca.transform(X_scaled)
     
-    np.save("project/pca_transformed.npy", transformed_data)
+    np.save("pca_transformed.npy", transformed_data)
     pca.plot_explained_variance()
